@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.huayu.bean.Work" table="work">
+        <id name="wid" column="wid">
+            <generator class="identity"></generator>
+        </id>
+        <property name="wname" column="wname"></property>
+        <property name="newtdtime" column="newtdtime"></property>
+        <property name="timetime" column="timetime"></property>
+        <property name="duty" column="duty"></property>
+        <property name="sid" column="sid"></property>
+    </class>
+</hibernate-mapping>

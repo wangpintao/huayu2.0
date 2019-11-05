@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.huayu.bean.Student" table="student">
+        <id name="sid" column="sid">
+            <generator class="identity"></generator>
+        </id>
+        <property name="stuname" column="stuname"></property>
+        <property name="sex" column="sex"></property>
+        <property name="age" column="age"></property>
+        <property name="gid" column="gid"></property>
+        <property name="mailbox" column="mailbox"></property>
+        <many-to-one name="gd" class="com.huayu.bean.Grade" lazy="false" insert="false" update="false" cascade="all" not-found="ignore">
+            <column name="gid"></column>
+        </many-to-one>
+        <set name="rolelist" table="student_role" cascade="save-update"  lazy="false">
+            <key column="sid"></key>
+            <many-to-many column="rid" class="com.huayu.bean.Role"></many-to-many>
+        </set>
+    </class>
+</hibernate-mapping>
